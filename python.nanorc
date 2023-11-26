@@ -1,4 +1,5 @@
 ## Python syntax highlighting rules for Nano
+# File location /usr/share/nano/python.nanorc
 
 syntax "python" "\.py$"
 header "^#!.*/(env +)?python[-0-9._]*( |$)"
