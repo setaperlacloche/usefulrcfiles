@@ -1,1 +1,2 @@
-# usefulrcfiles
+# useful rc files
+.screenrc, .zshrc
