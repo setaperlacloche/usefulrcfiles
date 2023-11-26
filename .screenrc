@@ -1,0 +1,16 @@
+shell "/usr/bin/zsh"
+defscrollback 1024
+startup_message off
+hardstatus on
+hardstatus alwayslastline
+hardstatus string "%H | %l |%{kc} %-Lw%{= bW}%50> %n%f %t %{-}%+Lw%< %=%{-}| %c:%s"
+bind R eval "source $HOME/.screenrc" "echo '.screenrc reloaded!'"
+
+# Check that ESC sequences are correct in following binkey commends:
+bindkey "^[[5;5~" prev      # Ctrl + Page Up
+bindkey "^[[6;5~" next      # Ctrl + Page Down
+
+# Edit/duplicate following lines to define a set of default windows
+screen -t root                    1 zsh
+screen -t mycode                  1 zsh -c 'trap : INT; /home/user/mycode.sh; zsh'
+select 1
