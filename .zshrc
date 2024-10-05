@@ -243,6 +243,11 @@ setopt AUTO_RESUME
 
 export PATH=$PATH:/usr/sbin
 
+function difflinebyline()
+{ # Compare line by line two files, out side by side unmatched lines
+  paste $1 $2 | grep -Pv '(.*)\t\K\1$'
+}
+
 function nanorcupdate()
 {
     (( $EUID != 0 )) && { echo "This command required root privileges"; return 1 }
