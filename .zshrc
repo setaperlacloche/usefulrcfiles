@@ -287,6 +287,22 @@ function zrcupdate()
   echo -e '\e[1;31mFAILED !\e[0m'
   return 1
 }
+# Binary files to hex dump 8/16/32 columns
+function hex8() {
+    xxd -c 8 "$1" > "${1%.bin}.hex8"
+}
+function hex16() {
+    xxd -c 16 "$1" > "${1%.bin}.hex16"
+}
+function hex32() {
+    xxd -c 32 "$1" > "${1%.bin}.hex32"
+}
+# Find text in binary file, exit offset and matched pattern
+alias fnd="LC_ALL=C grep --byte-offset --only-matching --text"
+# Decimal value to hex
+alias d2h="printf '%x\n'"
+# Hex (0x) to Decimal value
+function h2d() { printf '%d\n' 0x$1 }
 
 function original() { cp -p $1 $1.original }
 function useful() { grep -v '^$' $1 | grep -v "^[[:space:]]*[#;]" }
