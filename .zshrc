@@ -65,6 +65,7 @@ alias 400='chmod 400'
 alias -- +x='chmod +x'
 alias du1="du --max-depth=1 --exclude '*/proc/*' -h"
 alias du2="du --max-depth=2 --exclude '*/proc/*' -h"
+alias f64='od -An -w8 -tfD'
 alias size='find . -type f -printf "%s\n" | awk "{sum+=\$1} END {print sum}"'
 alias pmake="time nice make -j$(nproc) --load-average=$(nproc)"
 if [[ -f /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor ]]; then
