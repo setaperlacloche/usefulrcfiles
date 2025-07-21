@@ -252,8 +252,8 @@ function difflinebyline()
 function nanorcupdate()
 {
     (( $EUID != 0 )) && { echo "This command required root privileges"; return 1 }
-	mkdir -p ~/.nano
     wgetproxy 'https://github.com/setaperlacloche/usefulrcfiles/raw/main/python.nanorc' -O /usr/share/nano/python.nanorc
+    wgetproxy 'https://github.com/setaperlacloche/usefulrcfiles/raw/main/nanorc' -O /etc/nanorc
     echo "nanorc files updated"
 }
 
