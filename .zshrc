@@ -30,7 +30,7 @@ if [[ -f "/etc/debian_version" ]]; then
   if [[ $major == "9" || $major == "10" ]]; then
     alias nano="nano --smooth --tabsize=4 --showcursor"
     alias nanom="nano --smooth --tabsize=4 --mouse"
-  elif [[ $major == "11" || $major == "12" ]]; then
+  elif [[ $major == "11" || $major == "12" || $major == "13" ]]; then
     alias nano="nano --tabsize=4 -K"
     alias nanom="nano --tabsize=4 --mouse"
   fi
@@ -203,7 +203,7 @@ bindkey "\e[1;5D" backward-word
 bindkey "\e[1;5C" forward-word
 bindkey "^?" backward-delete-char
 
-tabs 4
+tabs -4
 
 # make backspace works properly
 stty erase '^h'
